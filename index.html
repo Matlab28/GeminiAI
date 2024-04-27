@@ -41,21 +41,17 @@ margin: 1em 0;
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
-// Fetch your API_KEY
 const API_KEY = "keyyy";
 
-
-// Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 
-// ...
 async function run() {
 console.log('Calling');
 const fromDest = document.getElementById("from").value;
 const toDest = document.getElementById("to").value;
 const days = document.getElementById("days").value;
-// For text-only input, use the gemini-pro model
+
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
 
 
@@ -72,13 +68,9 @@ document.getElementById("output").innerHTML = converter.makeHtml(text);
 }
 
 
-// run();
-
-
 document.getElementById("generateBtn").addEventListener("click", run);
 
 
-// ...
 </script>
 </body>
 
